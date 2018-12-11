@@ -38,18 +38,9 @@ if (keyboard_check(vk_space)) {
 
 line_3 = "lastchar:" + keyboard_lastchar;
 
-var number_game_pads = gamepad_get_device_count();
-//var number_buttons = gamepad_button_count(0);
-//line_2 = "There are " + string(number_game_pads) + " game_pads detected with " + string(number_buttons) + " buttons.";
-
-//for (var i = 0; i < number_game_pads; i++) {
 for (var i = 0; i < 11; i++) {
 	var tmp_line_1 = "gp" + string(i) + " ";
-	
-/*	for (var j = 0; j < gamepad_button_count(i); j++) {
-		line_2 = "gp button:" + gamepad_button_check_pressed(i, j);
-	} */
-	
+
 
 	if (gamepad_button_check(i, gp_face1)) {
 		line_1 = tmp_line_1 + "gp_face1";
@@ -170,4 +161,3 @@ for (var i = 0; i < 10; i++) {
 		line_2 = "mb_any";
 	}
 }
-
