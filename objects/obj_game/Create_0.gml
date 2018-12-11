@@ -2,7 +2,8 @@ line_1 = "NONE";
 line_2 = "NONE";
 line_3 = "NONE";
 
-circle_selected = false;
+white_circle_selected = false;
+red_circle_selected = false;
 
 // some joysticks are "sensitive"
 // so let's ignore tiny amounts from them

@@ -1,6 +1,6 @@
 draw_text(10, 10, "INPUT testing");
 
-draw_text(30, 50, "Mouse left click on circle to select it, then left click again to move it.");
+draw_text(30, 50, "Mouse left click on either circle to select it, then left click again to move it.");
 draw_text(30, 70, "Mouse right click to move square to that location.");
 draw_text(30, 90, "Use arrow keys to turn and move triangle. (space to reset)");
 draw_text(30,110, "Use gamepad (arrows or either stick) to turn triangle.");

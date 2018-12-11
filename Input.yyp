@@ -319,7 +319,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "sprites\/s_circle\/s_circle.yy",
+                "resourcePath": "sprites\/s_circle_white\/s_circle_white.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -359,6 +359,25 @@
                 ],
                 "resourcePath": "options\/linux\/options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "afe47ce5-ba84-4517-b44c-2bb33161f6d9",
+            "Value": {
+                "id": "2cbc3482-4984-4014-8bff-64ecbbbfe147",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/o_circle_red\/o_circle_red.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -528,7 +547,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "objects\/o_circle\/o_circle.yy",
+                "resourcePath": "objects\/o_circle_white\/o_circle_white.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -548,6 +567,25 @@
                     "default"
                 ],
                 "resourcePath": "sprites\/s_triangle\/s_triangle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fbe3c2e6-49f9-4ebd-a722-0bdcf2c38c97",
+            "Value": {
+                "id": "e9c33c98-a9e0-4410-b615-85ef93faf73e",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/s_circle_red\/s_circle_red.yy",
                 "resourceType": "GMSprite"
             }
         }

@@ -2,7 +2,7 @@
     "id": "fb0d6873-e471-478e-9798-b8098a7793f4",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_circle",
+    "name": "o_circle_white",
     "eventList": [
         
     ],

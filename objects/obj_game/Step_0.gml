@@ -133,18 +133,32 @@ for (var i = 0; i < 10; i++) {
 
 	if (device_mouse_check_button_pressed(i, mb_left)) {
 		line_1 = tmp_line_1 + "mb_left";
-		if (circle_selected) {
-			circle_selected = false;
-			o_circle.image_alpha = 1;
-			o_circle.x = mouse_x;
-			o_circle.y = mouse_y;
+		if (white_circle_selected) {
+			white_circle_selected = false;
+			o_circle_white.image_alpha = 1;
+			o_circle_white.x = mouse_x;
+			o_circle_white.y = mouse_y;
 		} else {
-			// see if we have left clicked the circle
-			var c = instance_position(mouse_x, mouse_y, o_circle);
-			if (c != noone) {
-				circle_selected = true;
-				// indicate that we have the circle selected
-				o_circle.image_alpha = 0.5;
+			if (red_circle_selected) {
+				red_circle_selected = false;
+				o_circle_red.image_alpha = 1;
+				o_circle_red.x = mouse_x;
+				o_circle_red.y = mouse_y;
+			} else {
+				// see if we have left clicked the white circle
+				var w = instance_position(mouse_x, mouse_y, o_circle_white);
+				if (w != noone) {
+					white_circle_selected = true;
+					// indicate that we have the circle selected
+					o_circle_white.image_alpha = 0.5;
+				}
+				// see if we have left clicked the red circle
+				var r = instance_position(mouse_x, mouse_y, o_circle_red);
+				if (r != noone) {
+					red_circle_selected = true;
+					// indicate that we have the circle selected
+					o_circle_red.image_alpha = 0.5;
+				}
 			}
 		}
 	}
