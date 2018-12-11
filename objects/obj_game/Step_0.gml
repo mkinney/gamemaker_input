@@ -7,6 +7,35 @@ if (keyboard_check_pressed(vk_escape)) {
 	line_1 = "vk_escape";
 }
 
+if (keyboard_check(vk_left)) {
+	line_1 = "vk_left";
+	o_triangle.image_angle += 5;
+	o_triangle.direction += 5;
+}
+
+if (keyboard_check(vk_right)) {
+	line_1 = "vk_right";
+	o_triangle.image_angle -= 5;
+	o_triangle.direction -= 5;
+}
+
+if (keyboard_check(vk_up)) {
+	line_1 = "vk_up";
+	o_triangle.speed += 1;
+
+}
+
+if (keyboard_check(vk_down)) {
+	line_1 = "vk_down";
+	o_triangle.speed -= 1;
+}
+
+if (keyboard_check(vk_space)) {
+	line_1 = "vk_space";
+	game_restart();
+}
+
+
 line_3 = "lastchar:" + keyboard_lastchar;
 
 var number_game_pads = gamepad_get_device_count();
@@ -66,9 +95,11 @@ for (var i = 0; i < 11; i++) {
 	}
 	if (gamepad_button_check(i, gp_padl)) {
 		line_1 = tmp_line_1 + "gp_padl";
+		o_triangle.image_angle += 5;
 	}
 	if (gamepad_button_check(i, gp_padr)) {
 		line_1 = tmp_line_1 + "gp_padr";
+		o_triangle.image_angle -= 5;
 	}
 	
 	// axis left
@@ -78,6 +109,13 @@ for (var i = 0; i < 11; i++) {
 		(axislv < 0.0) or (axislv > 0.0)
 	   ) {
 		line_1 = tmp_line_1 + "lh:" + string(axislh) + " lv:" + string(axislv);
+		if (axislh < 0.5) {
+			o_triangle.image_angle += 5;
+		}
+		if (axislh > 0.5) {
+			o_triangle.image_angle -= 5;
+		}
+
 	}
 	
 	// axis right
@@ -87,8 +125,14 @@ for (var i = 0; i < 11; i++) {
 		(axisrv < 0.0) or (axisrv > 0.0)
 	   ) {
 		line_1 = tmp_line_1 + "rh:" + string(axisrh) + " rv:" + string(axisrv);
+		if (axisrh < 0.5) {
+			o_triangle.image_angle += 5;
+		}
+		if (axisrh > 0.5) {
+			o_triangle.image_angle -= 5;
+		}
+		
 	}
-
 
 }
 
@@ -98,14 +142,32 @@ for (var i = 0; i < 10; i++) {
 
 	if (device_mouse_check_button_pressed(i, mb_left)) {
 		line_1 = tmp_line_1 + "mb_left";
+		if (circle_selected) {
+			circle_selected = false;
+			o_circle.image_alpha = 1;
+			o_circle.x = mouse_x;
+			o_circle.y = mouse_y;
+		} else {
+			// see if we have left clicked the circle
+			var c = instance_position(mouse_x, mouse_y, o_circle);
+			if (c != noone) {
+				circle_selected = true;
+				// indicate that we have the circle selected
+				o_circle.image_alpha = 0.5;
+			}
+		}
 	}
 	if (device_mouse_check_button_pressed(i, mb_middle)) {
 		line_1 = tmp_line_1 + "mb_middle";
 	}
 	if (device_mouse_check_button_pressed(i, mb_right)) {
 		line_1 = tmp_line_1 + "mb_right";
+		// move square to wherever we right click the mouse
+		o_square.x = mouse_x;
+		o_square.y = mouse_y;
 	}
 	if (device_mouse_check_button_pressed(i, mb_any)) {
 		line_2 = "mb_any";
 	}
 }
+
