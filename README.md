@@ -2,6 +2,17 @@ Repo for testing GameMakerStudio 2 input (keyboard, mouse, and gamepad). I wante
 
 Note: You probably would not use this code for moving objects in your programs.
 
+This has been tested on:
+<li>mac(from GameMakerStudio2)
+<li>windows10 (from GameMakerStudio2)
+<li>mac (using the HTML5 option). Tip: "Package as Loose Files", choose empty directory then you can test by using python webserver (python v2 "python2.7 -m SimpleHTTPServer 8000" or v3 "python -m http.server 8000" then open up [http://127.0.0.1:8000]() in browser.) Gamepad inputs will not work. Mouse and keyboard inputs do work as expected.
+<li>iOS mac/simulator - left click works, right click does not; double click seems to work like a right click; keys initially did not work as the keyboard is not active; but I enabled the virtual keyboard (via a VK button) and it works now
+<li>Ubuntu 18.04 - keyboard and mouse work as expected (have not tested gamepad)
+
+
+<br>
+<br>
+
 
 Best <b>mac</b> gamepad:<br>
 <img src="gamepads/nimbus.png" width="200">

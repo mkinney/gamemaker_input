@@ -133,6 +133,14 @@ for (var i = 0; i < 10; i++) {
 
 	if (device_mouse_check_button_pressed(i, mb_left)) {
 		line_1 = tmp_line_1 + "mb_left";
+		
+		// see if we have left clicked the virtual keyboard
+		var vk = instance_position(mouse_x, mouse_y, o_virtualkeyboard);
+		if (vk != noone) {
+			show_debug_message("vk pressed");
+			keyboard_virtual_show(kbv_type_default, kbv_returnkey_default, kbv_autocapitalize_none, false);
+		}
+		
 		if (white_circle_selected) {
 			white_circle_selected = false;
 			o_circle_white.image_alpha = 1;
