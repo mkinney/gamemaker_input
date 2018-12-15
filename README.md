@@ -10,6 +10,11 @@ This has been tested on:
 <li>Ubuntu 18.04 - keyboard and mouse work as expected (have not tested gamepad)
 
 
+TODO:
+<li>Add virtual joysticks
+<li>Simple text input
+<li>Figure out how to get virtual keyboard to show on iOS and Android
+
 
 <br>
 <br>
