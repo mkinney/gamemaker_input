@@ -362,6 +362,25 @@
             }
         },
         {
+            "Key": "82d1cc04-1706-4a20-bc03-27678f9fc87d",
+            "Value": {
+                "id": "ed8d83a0-d2ff-4162-90bc-0f7221ea69d4",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/o_circle_blue\/o_circle_blue.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "82deadde-1a97-485c-8f54-f0b9fc2335da",
             "Value": {
                 "id": "11b99cf1-4fd2-4683-b875-e4467e2a9b57",
@@ -492,6 +511,25 @@
                 ],
                 "resourcePath": "options\/linux\/options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "aed670ae-fae0-416a-92ee-b4c87f8c3939",
+            "Value": {
+                "id": "eb21ae1a-5108-4cac-bdcc-b8a6f31dc8db",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/s_circle_blue\/s_circle_blue.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

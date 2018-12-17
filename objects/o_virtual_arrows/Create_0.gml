@@ -1,11 +1,10 @@
 /// @description Create virtual arrows
 
-var xx = 10;
-var yy = 10;
-
 var offset = 64;
+var xx = (room_width / 2) - (offset / 2);
+var yy = 360;
 
-show = true;
+show = false;
 
 // define the instances
 virtual_arrow_left = instance_create_layer(xx, yy + offset / 2, "Instances", o_virtual_arrow);
@@ -23,3 +22,9 @@ virtual_arrow_left.dir = "left";
 virtual_arrow_right.dir = "right";
 virtual_arrow_up.dir = "up";
 virtual_arrow_down.dir = "down";
+
+// do not let it draw the first frame
+virtual_arrow_left.visible = show;
+virtual_arrow_up.visible = show;
+virtual_arrow_down.visible = show;
+virtual_arrow_right .visible = show;

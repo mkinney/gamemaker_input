@@ -22,7 +22,6 @@ if (keyboard_check(vk_right)) {
 if (keyboard_check(vk_up)) {
 	line_1 = "vk_up";
 	o_triangle.speed += 1;
-
 }
 
 if (keyboard_check(vk_down)) {
@@ -80,49 +79,55 @@ for (var i = 0; i < 11; i++) {
 	}
 	if (gamepad_button_check(i, gp_padu)) {
 		line_1 = tmp_line_1 + "gp_padu";
+		o_triangle.speed += 1;
 	}
 	if (gamepad_button_check(i, gp_padd)) {
 		line_1 = tmp_line_1 + "gp_padd";
+		o_triangle.speed -= 1;
 	}
 	if (gamepad_button_check(i, gp_padl)) {
 		line_1 = tmp_line_1 + "gp_padl";
 		o_triangle.image_angle += 5;
+		o_triangle.direction += 5;
 	}
 	if (gamepad_button_check(i, gp_padr)) {
 		line_1 = tmp_line_1 + "gp_padr";
 		o_triangle.image_angle -= 5;
+		o_triangle.direction -= 5;
 	}
 	
-	// axis left
-	var axislh = gamepad_axis_value(i, gp_axislh);
-	var axislv = gamepad_axis_value(i, gp_axislv);
-	if ((axislh < 0.0) or (axislh > 0.0) or
-		(axislv < 0.0) or (axislv > 0.0)
-	   ) {
-		line_1 = tmp_line_1 + "lh:" + string(axislh) + " lv:" + string(axislv);
-		if (axislh < 0.5) {
-			o_triangle.image_angle += 5;
+	if (! red_circle_selected) {
+		// axis left
+		var axislh = gamepad_axis_value(i, gp_axislh);
+		var axislv = gamepad_axis_value(i, gp_axislv);
+		if ((axislh < 0.0) or (axislh > 0.0) or
+			(axislv < 0.0) or (axislv > 0.0)
+		   ) {
+			line_1 = tmp_line_1 + "lh:" + string(axislh) + " lv:" + string(axislv);
+			if (axislh < 0.5) {
+				o_triangle.image_angle += 5;
+			}
+			if (axislh > 0.5) {
+				o_triangle.image_angle -= 5;
+			}
 		}
-		if (axislh > 0.5) {
-			o_triangle.image_angle -= 5;
-		}
-
 	}
 	
-	// axis right
-	var axisrh = gamepad_axis_value(i, gp_axisrh);
-	var axisrv = gamepad_axis_value(i, gp_axisrv);
-	if ((axisrh < 0.0) or (axisrh > 0.0) or
-		(axisrv < 0.0) or (axisrv > 0.0)
-	   ) {
-		line_1 = tmp_line_1 + "rh:" + string(axisrh) + " rv:" + string(axisrv);
-		if (axisrh < 0.5) {
-			o_triangle.image_angle += 5;
-		}
-		if (axisrh > 0.5) {
-			o_triangle.image_angle -= 5;
-		}
-		
+	if (! blue_circle_selected) {
+		// axis right
+		var axisrh = gamepad_axis_value(i, gp_axisrh);
+		var axisrv = gamepad_axis_value(i, gp_axisrv);
+		if ((axisrh < 0.0) or (axisrh > 0.0) or
+			(axisrv < 0.0) or (axisrv > 0.0)
+		   ) {
+			line_1 = tmp_line_1 + "rh:" + string(axisrh) + " rv:" + string(axisrv);
+			if (axisrh < 0.5) {
+				o_triangle.image_angle += 5;
+			}
+			if (axisrh > 0.5) {
+				o_triangle.image_angle -= 5;
+			}
+		}		
 	}
 
 }
@@ -206,19 +211,35 @@ for (var i = 0; i < 10; i++) {
 				o_circle_red.x = mouse_x;
 				o_circle_red.y = mouse_y;
 			} else {
-				// see if we have left clicked the white circle
-				var w = instance_position(mouse_x, mouse_y, o_circle_white);
-				if (w != noone) {
-					white_circle_selected = true;
-					// indicate that we have the circle selected
-					o_circle_white.image_alpha = 0.5;
-				}
-				// see if we have left clicked the red circle
-				var r = instance_position(mouse_x, mouse_y, o_circle_red);
-				if (r != noone) {
-					red_circle_selected = true;
-					// indicate that we have the circle selected
-					o_circle_red.image_alpha = 0.5;
+				if (blue_circle_selected) {
+					// see if we have left clicked the blue circle again
+					var b = instance_position(mouse_x, mouse_y, o_circle_blue);
+					if (b != noone) {
+						blue_circle_selected = false;
+						o_circle_blue.image_alpha = 1;
+					}
+				} else {
+					// see if we have left clicked the white circle
+					var w = instance_position(mouse_x, mouse_y, o_circle_white);
+					if (w != noone) {
+						white_circle_selected = true;
+						// indicate that we have the circle selected
+						o_circle_white.image_alpha = 0.5;
+					}
+					// see if we have left clicked the red circle
+					var r = instance_position(mouse_x, mouse_y, o_circle_red);
+					if (r != noone) {
+						red_circle_selected = true;
+						// indicate that we have the circle selected
+						o_circle_red.image_alpha = 0.5;
+					}
+					// see if we have left clicked the blue circle
+					var b = instance_position(mouse_x, mouse_y, o_circle_blue);
+					if (b != noone) {
+						blue_circle_selected = true;
+						// indicate that we have the circle selected
+						o_circle_blue.image_alpha = 0.5;
+					}
 				}
 			}
 		}
