@@ -13,7 +13,7 @@ This has been tested on:
 TODO:
 <li>Add virtual joysticks
 <li>Simple text input
-<li>Figure out how to get virtual keyboard to show on iOS and Android
+<li>Figure out how to get virtual keyboard to show on iOS
 
 
 <br>

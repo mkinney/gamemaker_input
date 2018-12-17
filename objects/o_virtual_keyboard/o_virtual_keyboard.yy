@@ -2,7 +2,7 @@
     "id": "584aed52-2474-4a2f-b8ab-a33fe56bd26d",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_virtualkeyboard",
+    "name": "o_virtual_keyboard",
     "eventList": [
         
     ],

@@ -58,6 +58,44 @@
             }
         },
         {
+            "Key": "0c16fa73-74be-4d98-878b-331801d88bc2",
+            "Value": {
+                "id": "e36e7d4b-ed0e-4916-a834-5bb17f19ca60",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/s_virtual_arrows\/s_virtual_arrows.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "194f96e5-92c4-4618-8c2b-02e693b480c5",
+            "Value": {
+                "id": "d6c118ba-93c6-45fa-927b-25989c6870dd",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/o_virtual_arrow\/o_virtual_arrow.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1c928d75-ac41-4548-a5f6-8ca42c207c84",
             "Value": {
                 "id": "0c4ef1f2-e5c4-476b-8cd9-5af44a06e8c2",
@@ -205,7 +243,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "objects\/o_virtualkeyboard\/o_virtualkeyboard.yy",
+                "resourcePath": "objects\/o_virtual_keyboard\/o_virtual_keyboard.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -264,6 +302,25 @@
                 ],
                 "resourcePath": "views\/6510f63d-1c15-4c9e-91cb-e334e03b6c96.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6fdd055f-1dd0-4d32-9998-272cb3e76dec",
+            "Value": {
+                "id": "151291b1-5086-4e64-b5b1-b5b8e79e978f",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/s_virtual_arrow\/s_virtual_arrow.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -476,6 +533,44 @@
             }
         },
         {
+            "Key": "bd792797-dd3c-4d74-94e8-8f6c6bac9f92",
+            "Value": {
+                "id": "9169d03a-9f62-4f5d-962d-45c0fa9ecd2c",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/o_virtual_arrows\/o_virtual_arrows.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c75b5555-16f4-4db4-9f39-13af55f3b8ab",
+            "Value": {
+                "id": "5abcee42-2857-4408-925d-fcc84d65bac0",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/o_virtual_arrows_button\/o_virtual_arrows_button.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c9ca416d-453d-4b23-b4fe-9072a9c948cd",
             "Value": {
                 "id": "77f1106c-c85d-4027-aa97-0cde0ff29029",
@@ -604,7 +699,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "sprites\/s_virtualkeyboard\/s_virtualkeyboard.yy",
+                "resourcePath": "sprites\/s_virtualkey_board\/s_virtualkey_board.yy",
                 "resourceType": "GMSprite"
             }
         },

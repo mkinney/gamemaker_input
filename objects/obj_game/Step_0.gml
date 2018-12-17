@@ -135,10 +135,63 @@ for (var i = 0; i < 10; i++) {
 		line_1 = tmp_line_1 + "mb_left";
 		
 		// see if we have left clicked the virtual keyboard
-		var vk = instance_position(mouse_x, mouse_y, o_virtualkeyboard);
+		// (to show/hide the built-in virtual keyboard)
+		var vk = instance_position(mouse_x, mouse_y, o_virtual_keyboard);
 		if (vk != noone) {
 			show_debug_message("vk pressed");
-			keyboard_virtual_show(kbv_type_default, kbv_returnkey_default, kbv_autocapitalize_none, false);
+			show_virtual_keyboard = !show_virtual_keyboard;
+			if (show_virtual_keyboard) {
+				o_virtual_keyboard.image_alpha = 1;
+				keyboard_virtual_show(kbv_type_default, kbv_returnkey_default, kbv_autocapitalize_none, false);
+			} else {
+				o_virtual_keyboard.image_alpha = 0.5;
+				keyboard_virtual_hide();
+			}
+		}
+		
+		// see if we have left clicked the virtual arrows button
+		// (to show/hide the some custom virtual arrows)
+		var vab = instance_position(mouse_x, mouse_y, o_virtual_arrows_button);
+		if (vab != noone) {
+			show_debug_message("vab pressed");
+			if (!virtual_arrows.show) {
+				virtual_arrows.show = true;
+				o_virtual_arrows_button.image_alpha = 1;
+			} else {
+				virtual_arrows.show = false;
+				o_virtual_arrows_button.image_alpha = 0.5;
+			}
+		}
+		
+		if (virtual_arrows.show) {
+			// see if they pressed a virtual arrow
+			var vas = instance_position(mouse_x, mouse_y, o_virtual_arrow);
+			if (vas != noone) {
+			
+				show_debug_message("a virtual arrow was pressed");
+			
+				if (vas.dir == "left") {
+					o_triangle.image_angle += 5;
+					o_triangle.direction += 5;
+					line_4 = "va left";
+				}
+
+				if (vas.dir == "right") {
+					o_triangle.image_angle -= 5;
+					o_triangle.direction -= 5;
+					line_4 = "va right";
+				}
+
+				if (vas.dir == "up") {
+					o_triangle.speed += 1;
+					line_4 = "va up";
+				}
+
+				if (vas.dir == "down") {
+					o_triangle.speed -= 1;
+					line_4 = "va down";
+				}
+			}
 		}
 		
 		if (white_circle_selected) {
@@ -174,10 +227,13 @@ for (var i = 0; i < 10; i++) {
 		line_1 = tmp_line_1 + "mb_middle";
 	}
 	if (device_mouse_check_button_pressed(i, mb_right)) {
+		// if you double click, it is the same as mouse right click
 		line_1 = tmp_line_1 + "mb_right";
-		// move square to wherever we right click the mouse
-		o_square.x = mouse_x;
-		o_square.y = mouse_y;
+		if (! virtual_arrows.show) {
+			// move square to wherever we right click the mouse, only if we don't have virtual arrows showing
+			o_square.x = mouse_x;
+			o_square.y = mouse_y;
+		}
 	}
 	if (device_mouse_check_button_pressed(i, mb_any)) {
 		line_2 = "mb_any";
