@@ -13,7 +13,8 @@ This has been tested on:
 TODO:
 <li>Add virtual joysticks
 <li>Simple text input
-<li>Figure out how to get virtual keyboard to show on iOS
+<li>Figure out how to get virtual keyboard to show on virtual iOS devices (works on real iOS device)
+<li>Figure out why game_restart(); does not work on iOS real device
 
 
 <br>

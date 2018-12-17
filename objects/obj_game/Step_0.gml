@@ -34,6 +34,17 @@ if (keyboard_check(vk_space)) {
 	game_restart();
 }
 
+/*
+if (keyboard_check(ord("r"))) {
+	game_restart();
+} */
+
+/*
+if ((keyboard_lastchar == "r") || (keyboard_lastchar == " ")) {
+	keyboard_lastchar = "";
+	game_restart();
+} */
+
 
 line_3 = "lastchar:" + keyboard_lastchar;
 
